@@ -1,16 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import HelloWorld from './components/hello-world';
+import Container from 'react-bootstrap/Container';
+import Products from './Products';
+import JumbotronComponent from './JumbotronComponent';
+import UserForm from './UserForm';
+import GitHub from './GitHub';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return <HelloWorld title="Hello from React webpack" />;
-  }
+function App() {
+  return (
+    <div>
+      <Container>
+        <JumbotronComponent>
+          This is a long sentence, and I want to insert
+          content into the jumbotron component from the
+          outside.
+        </JumbotronComponent>
+        <Products />
+        <UserForm />
+        <GitHub />
+      </Container>
+    </div>
+  );
 }
 
 export default hot(App);
